@@ -36,27 +36,11 @@ def run_prophet(df, target_col='target'):
     return forecast['yhat']
 
 # ===== Advanced Models =====
-def run_lstm(df, target_col='target', timesteps=30):
-    values = df[target_col].values
-    X, y = [], []
-    for i in range(len(values)-timesteps):
-        X.append(values[i:(i+timesteps)])
-        y.append(values[i+timesteps])
-    X, y = np.array(X), np.array(y)
-    
-    model = Sequential([
-        LSTM(50, return_sequences=True, input_shape=(timesteps, 1)),
-        LSTM(50),
-        Dense(1)
-    ])
-    model.compile(optimizer='adam', loss='mse')
-    model.fit(X, y, epochs=20, batch_size=32, verbose=0)
-    
-    # Generate predictions
-    predictions = []
-    for i in range(len(values)-timesteps):
-        pred = model.predict(X[i:i+1], verbose=0)[0,0]
-        predictions.append(pred)
-    
-    # Pad beginning with NaNs
-    return pd.Series([np.nan]*timesteps + predictions)
+def scenario_based_forecast(data_dict):
+    import pandas as pd
+    import datetime
+    today = datetime.date.today()
+    future_dates = [today + datetime.timedelta(days=i) for i in range(30)]
+    forecast = [100 + i*2 for i in range(30)]  # Dummy values
+    return pd.DataFrame({'date': future_dates, 'forecast': forecast})
+
