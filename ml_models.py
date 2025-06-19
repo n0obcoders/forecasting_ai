@@ -4,8 +4,6 @@ from statsmodels.tsa.arima.model import ARIMA
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
 from prophet import Prophet
 from sklearn.linear_model import LinearRegression
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import LSTM, Dense
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 
 # ===== Traditional Models =====
