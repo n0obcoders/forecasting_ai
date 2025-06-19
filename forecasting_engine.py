@@ -60,7 +60,7 @@ def forecast(df, model_type="auto", target_col='target'):
         "prophet": run_prophet,
         "moving_average": run_moving_average,
         "exponential_smoothing": run_exponential_smoothing,
-        "lstm": lambda x, y: x  ,
+        "lstm": lambda df, col: df.tail(30)   ,
         "qualitative": lambda x, y: scenario_based_forecast({})  # Placeholder
     }
 
