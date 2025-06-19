@@ -25,7 +25,8 @@ if uploaded_file:
     st.write("🔮 Forecasting Results:")
     
     # Forecast and show results
-    forecast_df, model_used, metrics = run_forecasting_model(df)
+    forecast_df, model_used, metrics = run_forecasting_model(df, target_col='sales')
+
     
     st.success(f"Model Used: {model_used}")
     st.dataframe(forecast_df.tail())
