@@ -1,4 +1,4 @@
-from .ml_models import (
+from ml_models import (
     run_linear_regression,
     run_arima,
     run_prophet,
@@ -7,8 +7,8 @@ from .ml_models import (
     run_lstm,
     scenario_based_forecast,
 )
-from .data_cleaning import clean_data
-from .utils import calculate_metrics
+from data_cleaning import clean_data
+from utils import calculate_metrics
 import pandas as pd
 import numpy as np
 
