@@ -3,11 +3,9 @@ numpy
 statsmodels
 prophet
 scikit-learn
-
 beautifulsoup4
 requests
 streamlit
-time
 yfinance
 json
 random
