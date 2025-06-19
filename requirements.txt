@@ -7,5 +7,3 @@ beautifulsoup4
 requests
 streamlit
 yfinance
-json
-random
