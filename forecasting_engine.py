@@ -4,9 +4,9 @@ from ml_models import (
     run_prophet,
     run_moving_average,
     run_exponential_smoothing,
-    run_lstm,
-    scenario_based_forecast,
+    scenario_based_forecast  # ✅ now it works
 )
+
 from data_cleaning import clean_data
 from utils import calculate_metrics
 import pandas as pd
