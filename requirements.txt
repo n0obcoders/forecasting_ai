@@ -1,0 +1,13 @@
+pandas
+numpy
+statsmodels
+prophet
+scikit-learn
+tensorflow
+beautifulsoup4
+requests
+streamlit
+time
+yfinance
+json
+random
